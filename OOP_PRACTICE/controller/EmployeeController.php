@@ -1,5 +1,4 @@
 <?php
-
 class EmployeeController{
     
     public $conn;
@@ -35,13 +34,13 @@ class EmployeeController{
 
     public function update($id , $clientData)
     {
-        $empFName = $clientData['empfname'];   
-        $empLName = $clientData['emplname'];   
-        $empMName = $clientData['empmname'];   
+        $empFName = $clientData['fname'];   
+        $empLName = $clientData['lname'];   
+        $empMName = $clientData['mname'];   
         $position = $clientData['position'];   
         $department = $clientData['department'];   
 
-        $query = "UPDATE employee SET empFName='$empFName', empMName='$empMName', empLName='$empLName', position='$position', department='$department' WHERE empNo = $id LIMIT 1";
+        $query = "UPDATE employee SET empFName='$empFName', empMName='$empMName', empLName='$empLName', empPosition='$position', empDept='$department' WHERE empNo = '$id' LIMIT 1";
         $result = $this->conn->query($query);
         if($result){
             return true;
@@ -54,7 +53,7 @@ class EmployeeController{
     {
         $query = "SELECT * FROM employee WHERE empNo = $id LIMIT 1";
         $result = $this->conn->query($query);
-        if($result->num_rows > 1){
+        if($result->num_rows == 1){
             $data = $result->fetch_assoc();
             return $data;
         }else{

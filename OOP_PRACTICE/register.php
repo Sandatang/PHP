@@ -1,9 +1,9 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-
 <?php
 include('config/app.php');
-include('checker/dataChecker.php');
+
+include('./checker/dataChecker.php');
 
 ?>
 
