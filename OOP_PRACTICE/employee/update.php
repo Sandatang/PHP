@@ -2,9 +2,8 @@
 
 
 <?php
-include('config/app.php');
-include('controller/EmployeeController.php');
-include('includes/navbar.php');
+include('../checker/dataChecker.php');
+include('../includes/navbar.php');
 
 
 ?>
@@ -19,13 +18,13 @@ include('includes/navbar.php');
         if (isset($_GET['id'])) {
             $id = (int)$_GET['id'];
             $student_id  = new EmployeeController;
-            $result = $student_id->toEdit($id);
+            $result = $student_id->edit($id);
             if ($result) {
 
         ?>
-                <form action="checker/updateDataChecker.php" method="POST">
+                <form action="../checker/updateDataChecker.php" method="POST">
                     <div class="flex flex-col items-start gap-2">
-                        <p><?php include('includes/message.php'); ?></p>
+                        <p><?php include('../includes/message.php'); ?></p>
                         <div class="flex flex-col">
                             <label for="">Employee no.</label>
                             <input type="text" name="empno" placeholder="employee no." value="<?= $result['empNo'] ?>" readonly />

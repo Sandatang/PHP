@@ -1,9 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <?php
-include('config/app.php');
-include('includes/navbar.php');
-include('./checker/dataChecker.php');
+include('../includes/navbar.php');
+include('../checker/dataChecker.php');
 
 ?>
 
@@ -15,7 +14,7 @@ include('./checker/dataChecker.php');
 
         <form action="" method="POST">
             <div class="flex flex-col items-start gap-2">
-                <p><?php include('includes/message.php'); ?></p>
+                <p><?php include('../includes/message.php'); ?></p>
                 <div class="flex flex-col">
                     <label for="">Employee no.</label>
                     <input type="text" name="employeeno" placeholder="employee no." />

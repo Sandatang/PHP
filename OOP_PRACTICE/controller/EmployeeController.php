@@ -59,13 +59,13 @@ class EmployeeController{
         return false;
     }
 
-    public function toEdit($id)
+    public function searchUser($id)
     {
         $query = "SELECT * FROM employee WHERE empNo = $id LIMIT 1";
         $result = $this->conn->query($query);
         if($result->num_rows == 1){
-            $data = $result->fetch_assoc();
-            return $data;
+            // $data = $result->fetch_assoc();
+            return $result;
         }else{
             return false;
         }
@@ -77,7 +77,7 @@ class EmployeeController{
         $result = $this->conn->query($checkUser);
 
         if($result->num_rows > 0){
-            return true;
+            return $result;
         }
 
         return false;
