@@ -48,6 +48,16 @@ class EmployeeController{
         return false;
 
     }
+    
+    public function delete($id)
+    {
+        $query = "DELETE FROM employee WHERE empNo = $id LIMIT 1";
+        $result = $this->conn->query($query);
+        if($result){
+            return true;
+        }
+        return false;
+    }
 
     public function toEdit($id)
     {

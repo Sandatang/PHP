@@ -20,7 +20,7 @@ if (isset($_POST['save-update'])) {
     $result = $update->update((int)$id, $data);
 
     if($result){
-        redirect($result, "../view.php");
+        redirect("Update successfully", "../view.php");
     }else{
         redirect("Something went wrong try again later.", "update.php");
     }
