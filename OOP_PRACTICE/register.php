@@ -2,7 +2,7 @@
 
 <?php
 include('config/app.php');
-
+include('includes/navbar.php');
 include('./checker/dataChecker.php');
 
 ?>

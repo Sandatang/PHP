@@ -4,6 +4,8 @@
 <?php
 include('config/app.php');
 include('controller/EmployeeController.php');
+include('includes/navbar.php');
+
 
 ?>
 
