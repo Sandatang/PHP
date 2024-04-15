@@ -7,6 +7,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'intrams_system');
 
+include('DatabaseConnection.php');
 $db = new DatabaseConnection();
 
  function redirect($message, $path){

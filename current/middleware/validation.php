@@ -1,23 +1,28 @@
 <?php
 
 include('../config/app.php');
-include('../controller/EventController.php');
+include('../controller/RegisterController.php');
 
 // ADD
-if(isset($_POST['add-btn'])){
+if(isset($_POST['register-user'])){
     $data = [
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
+        'userName' => $_POST['username'],
         'password' => $_POST['password'],
+        'role' => $_POST['role'],
     ];
 
-    $controller = new EventController();
-    $result = $controller->addUser($data);
-
-    if($result){
-        redirect('added successfully', '../client/index.php');
+    if($_POST['password'] != $_POST['confirmpass']){
+        redirect('Password not match', 'addEvent.php');
     }else{
-        redirect('Somethign went wrong, try again later', 'add.php');
+
+        $controller = new RegisterController();
+        $result = $controller->addUser($data);
+
+        if($result){
+            redirect('added successfully', '../client/index.php');
+        }else{
+            redirect('Somethign went wrong, try again later', 'add.php');
+        }
     }
 
 }

@@ -1,17 +1,19 @@
 <?php
 
+include('../middleware/validation.php');
 
 ?>
 
 <div>
-    <form action="">
+    <?php include('../utils/message.php');?>
+    <form action="" method="POST">
         <label >Username</label>
         <input type="text" name="username">
         <label >Password</label>
         <input type="password" name="password">
         <label >Confirm Password</label>
         <input type="password" name="confirmpass">
-        <label >Confirm Password</label>
+        <label >Role</label>
         <select name="role">
             <option value="admin">Admin</option>
             <option value="athlete">Athlete</option>
